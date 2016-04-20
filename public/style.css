@@ -1,0 +1,54 @@
+
+body{
+  background-image: url(https://images.unsplash.com/photo-1460152129645-978c4acde887?crop=entropy&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375) ;               
+  
+  
+}
+.container{
+  margin-top: 250px;
+}
+.form-group{
+  margin-left: 20px;
+}
+.form-control{
+    margin: 0px;
+    width: 504px;
+    height: 301px;
+    border-radius: 8px;
+}
+#text-input {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 15px;
+  text-align: center;
+}
+#label{
+  margin-bottom: 50px
+}
+.sm {
+    width: 35%;
+    height: 35px;
+}
+.submit-text {
+    font-family: 'Playfair Display SC', serif;
+    background-color: transparent;
+    color: #F07444;
+    border: 1px solid #F07444;
+    transition: .2s ease;
+    display: block;
+    margin: 0 auto;
+}
+button{
+  text-align: center;
+}
+.button-wrap{
+  width: 500px;
+}
+.title{
+    font-family: 'Playfair Display SC', serif;
+    color: #F07444;
+    font-size: 40px;
+    padding: 50px;
+    margin-top: 98px;
+    margin-bottom: -267px;
+    padding-left: 118px;
+}
