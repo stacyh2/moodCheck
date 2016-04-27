@@ -1,11 +1,34 @@
 
-body{
-  background-image: url(https://images.unsplash.com/photo-1460152129645-978c4acde887?crop=entropy&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375) ;               
-  
-  
+html { 
+  background: url(https://images.unsplash.com/photo-1460152129645-978c4acde887?crop=entropy&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.body{
+  margin-top: 350px;
+  position: relative;
 }
 .container{
-  margin-top: 250px;
+  padding-top:216px;
+  padding-left: 41px;
+   width: 200px;
+    height: 260px;
+    position: relative;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
+.title{
+    font-family: 'Playfair Display SC', serif;
+    color: #F07444;
+    font-size: 40px;
+    padding: 50px;
+    margin-top: 133px;
+    margin-bottom: -267px;
+    padding-left: 158px;
 }
 .form-group{
   margin-left: 20px;
@@ -16,17 +39,106 @@ body{
     height: 301px;
     border-radius: 8px;
 }
-#text-input {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 15px;
+
+.details {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  margin-left:600px;
+  margin-bottom: 1000px;
+}
+.card-container {
+  cursor: pointer;
+  height: 301px;
+  perspective: 600;
+  position: relative;
+  width: 504px;
+}
+.card {
+  height: 100%;
+  position: absolute;
+/*  transform-style: preserve-3d;*/
+/*  transition: all 1s ease-in-out;*/
+  width: 100%;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+}
+.card div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 260px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 140px;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+/*  .card:hover {
+  transform: rotateY(180deg);
+}*/
+.card .side {
+/*  backface-visibility: hidden;*/
+  border-radius: 6px;
+  height: 100%;
+/*  position: absolute;*/
+  overflow: hidden;
+  width: 100%;
+}
+.card .back {
+  background: #eaeaed;
+  color: #0087cc;
+  line-height: 504px;
   text-align: center;
+ /* transform: rotateY(180deg);*/
+   -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+img {
+  max-height: 120%;
+  max-width: 120%;
+}
+#text-input {
+    margin: 0px;
+    width: 504px;
+    height: 301px;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 15px;
+    text-align: center;
 }
 #label{
   margin-bottom: 50px
 }
+.details{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
 .sm {
-    width: 35%;
-    height: 35px;
+    width: 41%;
+    height: 41px;
 }
 .submit-text {
     font-family: 'Playfair Display SC', serif;
@@ -43,12 +155,32 @@ button{
 .button-wrap{
   width: 500px;
 }
-.title{
-    font-family: 'Playfair Display SC', serif;
-    color: #F07444;
-    font-size: 40px;
-    padding: 50px;
-    margin-top: 98px;
-    margin-bottom: -267px;
-    padding-left: 118px;
+*@media screen and (min-width: 1024px){
+    .responsive-image{
+        background-image: url('../img/retina.jpg');
+    }
+}
+/* Desktop */
+@media screen and (min-width: 980px) and (max-width: 1024px){
+    .responsive-image{
+        background-image: url('../img/desktop.jpg');
+    }
+}
+/* Tablet */
+@media screen and (min-width: 760px) and (max-width: 980px){
+    .responsive-image{
+        background-image: url('../img/tablet.jpg');
+    }
+}
+/* Mobile HD */
+@media screen and (min-width: 350px) and (max-width: 760px){
+    .responsive-image{
+        background-image: url('../img/mobile-hd.jpg');
+    }
+}
+/* Mobile LD */
+@media screen and (max-width: 350px){
+    .responsive-image{
+        background-image: url('../img/mobile-ld.jpg');
+    }
 }
