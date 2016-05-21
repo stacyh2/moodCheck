@@ -24,8 +24,9 @@ app.get('/:data', function(req, res, next) {
 
 toneAnalyzer.tone({text: req.params.data}, function(err, tone) {
   console.log(req.params.data);
-    if (err)
+    if (err){
       return next(err);
+    }
     else
       return res.send(JSON.stringify(tone, null, 2));
   });
