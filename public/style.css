@@ -6,6 +6,10 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+
+      .hidden{ display: none; }
+    
 .body{
   margin-top: 350px;
   position: relative;

@@ -6,29 +6,15 @@
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="angular/angular.min.js"></script>
+  <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
   
   <title>Mooo...d <span>Check</span></title>
  </head>
-<body>
+<body ng-app="moodFun" ng-controller="MainCtrl">
   <div class="title">Mooo...d Check</div><br>
 
-      <div class="container">
-            <h1>Gmail API demo</h1>
-
-            <button id="authorize-button" class="btn btn-primary hidden">Authorize</button>
-
-            <table class="table table-striped table-inbox hidden">
-              <thead>
-                <tr>
-                  <th>From</th>
-                  <th>Subject</th>
-                  <th>Date/Time</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-
+      
   
    <div class="container">
      <div class="card-container">
@@ -45,7 +31,79 @@
    <div class="details"></div>
    </div>
 
+   
+      
+
+      <button id="authorize-button" class="btn btn-primary hidden">Authorize</button>
+
+      <table class="table table-striped table-inbox hidden">
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>Subject</th>
+            <th>Date/Time</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      var clientId = '786329488544-7k3p32nv6mhj9kvqvau5u7o22cepbt6k.apps.googleusercontent.com';
+      var apiKey = 'AIzaSyBAgiCoS3egnlKGtrg9fU31QSaOuJwPwac';
+      var scopes = 'https://www.googleapis.com/auth/gmail.readonly';
+
+      function handleClientLoad() {
+  gapi.client.setApiKey(apiKey);
+  window.setTimeout(checkAuth, 1);
+}
+
+function checkAuth() {
+  gapi.auth.authorize({
+    client_id: clientId,
+    scope: scopes,
+    immediate: true
+  }, handleAuthResult);
+}
+
+function handleAuthClick() {
+  gapi.auth.authorize({
+    client_id: clientId,
+    scope: scopes,
+    immediate: false
+  }, handleAuthResult);
+  return false;
+}
+
+function handleAuthResult(authResult) {
+  if(authResult && !authResult.error) {
+    loadGmailApi();
+    $('#authorize-button').remove();
+    $('.table-inbox').removeClass("hidden");
+  } else {
+    $('#authorize-button').removeClass("hidden");
+    $('#authorize-button').on('click', function(){
+      handleAuthClick();
+    });
+  }
+}
+
+function loadGmailApi() {
+  gapi.client.load('gmail', 'v1', displayInbox);
+}
+
+    </script>
+
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+
   <script src="jquery/dist/jquery.min.js"></script>
+  <script src="javascripts/mainApp.js"></script>
+  
+  
+  <script src="javascripts/controllers/mainController.js"></script>
+  
 
   <script src="main.js"></script>
 </body>
